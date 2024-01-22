@@ -1,0 +1,79 @@
+//events!!!!
+const redBox = document.querySelector('.centered-box')
+redBox.addEventListener('click', doSomething)
+//event 
+//js function 
+let rotation = 0
+
+//Named functions
+function doSomething(){
+    if(rotation < 360){
+        rotation += 90
+    }else{
+        rotation= 0
+    }
+    redBox.style.transform = `rotate(${rotation}deg)`
+}
+// Anonymous function
+const bigGreenBox = document.querySelector('.box-2')
+bigGreenBox.addEventListener('click', function(){
+    console.log('you clicked the big green box')
+})
+
+
+const container = document.querySelector('.container')
+container.addEventListener('click', ()=>{
+    console.log('you click the first gray container')
+})
+
+const purpleBoxes = document.querySelectorAll('.small-inner-box')
+// console.log(purpleBoxes)
+
+for(let i = 0; i < purpleBoxes.length; i++){
+    purpleBoxes[i].addEventListener('click', ()=>{
+        // console.log(`you clicked box #${i + 1}`)
+        purpleBoxes[i].style.backgroundColor = 'blue'
+    })
+}
+
+const pinkSquare = document.querySelector('.transition-element')
+pinkSquare.addEventListener('click', ()=>{
+    pinkSquare.classList.add('invisible')
+})
+
+
+
+
+
+
+
+Kyle Rose
+  9:15 AM
+const button = document.querySelector('#destroy-all')
+button.addEventListener('click', ()=>{
+    list.forEach(element => strikeThrough(element))
+    opaque.forEach(element => element.style.opacity = 0)
+    thirdList.forEach(element => element.style.width = 0)
+
+
+Jordan Thomas
+  10:14 am
+const dice = {};
+const diceRolls = [3, 3, 5, 5, 6, 4];
+
+for (let num of diceRolls) {
+  if (dice[num] > 0) {
+    dice[num]++;
+  } else {
+    dice[num] = 1;
+  }
+}
+let numRolled;
+let mostCount = 0;
+for (let key in dice) {
+  if (dice[key] > mostCount) {
+    mostCount = dice[key];
+    numRolled = key;
+  }
+}
+console.log(numRolled, mostCount);
